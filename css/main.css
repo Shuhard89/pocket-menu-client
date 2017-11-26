@@ -401,6 +401,7 @@ ol{
 	cursor: pointer;
 	transition: box-shadow .3s ease, transform .3s ease, opacity .3s ease;
 	position: relative;
+	user-select: none;
 }
 
 .profile-menu-btn.hidden{
