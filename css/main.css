@@ -222,6 +222,41 @@ ol{
 
 
 
+/* FOOTER */
+
+.main-footer{
+	padding: 20px 0;
+	background-color: #263843;
+	color: #b5b5b5;
+	font-size: 13px;
+}
+
+.footer-copy{
+	display: block;
+	float: left;
+}
+
+.footer-menu-list{
+	float: right;
+}
+
+.footer-menu-list > li{
+	float: left;
+	margin: 0 0 0 15px;
+}
+
+.footer-menu-list > li > a{
+	color: #b5b5b5;
+	transition: color .3s ease;
+}
+
+.footer-menu-list > li > a:hover{
+	color: #fff;
+}
+
+
+
+
 
 
 /* PAGE - PROFILE */
