@@ -25,7 +25,7 @@
 						<li>Ua</li>
 					</ul>
 				</div>
-				<span class="header-btn" id="login-btn">Войти<i class="fa fa-sign-in" aria-hidden="true"></i></span>
+				<span class="header-btn" id="login-btn">Войти</span>
 			</div>
 		</div>
 	</header>
@@ -57,13 +57,10 @@
 						<div class="content-wrapper clearfix">
 							<ul class="profile-menu-list clearfix">
 								<li class="active">
-									<a href="#">О нас</a>
+									<a href="#">Профиль</a>
 								</li>
 								<li>
 									<a href="#">Меню</a>
-								</li>
-								<li>
-									<a href="#">Фото</a>
 								</li>
 							</ul>
 							<div class="profile-menu-stats">
@@ -71,8 +68,8 @@
 								<span class="likes-value">389</span>
 							</div>
 							<div class="profile-menu-btns-container">
-								<span class="profile-menu-btn red" id="like-btn">Мне нравится<i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-								<span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span>
+								<span class="profile-menu-btn like" id="like-btn">Мне нравится<i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+								<!--<span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span>-->
 							</div>
 						</div>
 					</div>
@@ -274,6 +271,7 @@
 			</article>
 		</main>
 	</div>
+
 	<footer class="main-footer">
 		<div class="content-wrapper clearfix">
 			<span class="footer-copy">Copyright 2017 Pocket Menu - All Right Reserved</span>
@@ -293,6 +291,7 @@
 			</ul>
 		</div>
 	</footer>
+
 	<div class="light-overlay"></div>
 	<div class="login-modal">
 		<div class="login-modal-content">
@@ -316,7 +315,7 @@
 				var thisHref = $(this).attr('href');
 
 				$('html, body').animate({
-					scrollTop: $(thisHref).offset().top - 40
+					scrollTop: $(thisHref).offset().top - 120
 				}, 1000);
 			});
 
@@ -326,9 +325,9 @@
 				
 				var likesValuePlaceholder = $('.likes-value');
 
+                likesValuePlaceholder.removeClass('animate');
 				likesValuePlaceholder.html(+likesValuePlaceholder.html() + 1);
 				likesValuePlaceholder.addClass('animate');
-				$(this).addClass('hidden');
 			});
 		});
 	</script>

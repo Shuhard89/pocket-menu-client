@@ -17,7 +17,7 @@
 }
 
 html{
-	font-size: 16px;
+	font-size: 15px;
 	height: 100%;
 	max-width: 100vw;
 	overflow-x: hidden;
@@ -35,7 +35,7 @@ body{
 	overflow-x: hidden;
 	position: relative;
 	font-family: 'Lato', sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 1.9;
 	font-weight: normal;
 	font-style: normal;
@@ -79,10 +79,6 @@ ol{
 	margin: 0 auto;
 }
 
-.page-wrapper{
-	padding: 0;
-}
-
 .light-overlay{
 	width: 100%;
 	height: 100%;
@@ -109,11 +105,12 @@ ol{
 /* HEADER */
 
 .main-header{
+	position: relative;
 	width: 100%;
-	height: 80px;
-	top: 0;
-	left: 0;
+	height: 70px;
+	will-change: transform;
 	background-color: #263843;
+	z-index: 100;
 }
 
 .main-header .content-wrapper{
@@ -130,60 +127,32 @@ ol{
 	display: block;
 	height: 30px;
 	width: auto;
-	margin: 25px 0 0 0;
+	margin: 20px 0 0 0;
 }
 
 .main-header-right{
 	float: right;
-	margin: 18px 0 0 0;
+	margin: 17px 0 0 0;
 }
 
 .header-btn{
-	display: block;
-	float: left;
-	height: 44px;
-	padding: 0 72px 0 27px;
-	margin: 0 0 0 15px;
-	background-color: #ff7043;
-	border-radius: 3px;
-	font-weight: bold;
+	display: inline-block;
+	margin: 5px 0 0 15px;
+	color: #ff7043;
 	font-size: 14px;
-	line-height: 44px;
-	text-transform: uppercase;
-	color: #fff;
 	cursor: pointer;
-	transition: background-color .3s ease;
-	position: relative;
+	transition: color .3s ease;
 }
-
-.header-btn > i{
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 45px;
-	height: 100%;
-	font-size: 16px;
-	line-height: 43px;
-	text-align: center;
-	border-left: 1px solid #E5633C;
-	transition: border-color .3s ease;
-}
-
 .header-btn:hover{
-	background-color: #FF8B68;
-}
-
-.header-btn:hover i{
-	border-color: #FF7D55;
+	color: #d85b36;
 }
 
 .main-header-lang-switcher{
-	width: 44px;
-	height: 44px;
+	width: 40px;
+	height: 36px;
 	float: left;
 	color: #fff;
-	font-size: 14px;
+	font-size: 12px;
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
@@ -192,8 +161,8 @@ ol{
 .current-lang{
 	display: block;
 	width: 100%;
-	height: 44px;
-	line-height: 44px;
+	height: 36px;
+	line-height: 36px;
 }
 
 .lang-list{
@@ -250,8 +219,6 @@ ol{
 .footer-menu-list > li > a:hover{
 	color: #fff;
 }
-
-
 
 
 
@@ -424,9 +391,9 @@ ol{
 	height: 36px;
 	border-radius: 100px;
 	margin: 0 0 0 10px;
-	padding: 0 62px 0 30px;
+	padding: 0 57px 0 27px;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 36px;
 	text-transform: uppercase;
 	color: #fff;
@@ -448,7 +415,7 @@ ol{
 
 .profile-menu-btn i{
 	display: block;
-	width: 45px;
+	width: 38px;
 	height: 100%;
 	padding: 0 3px 0 0;
 	text-align: center;
@@ -466,12 +433,12 @@ ol{
 	background-color: #44d775;
 }
 
-.profile-menu-btn.red{
-	background-color: #df3a3e;
+.profile-menu-btn.like{
+	background-color: #1da1f2;
 }
 
-.profile-menu-btn.red i{
-	border-left: 1px solid #C83436;
+.profile-menu-btn.like i{
+	border-left: 1px solid #178bd3;
 }
 
 .profile-menu-stats{
@@ -568,7 +535,7 @@ ol{
 }
 
 .profile-col-wide{
-	width: 700px;
+	width: 730px;
 	max-width: 100%;
 	float: left;
 	padding: 50px 30px;
@@ -578,7 +545,7 @@ ol{
 }
 
 .profile-col-small{
-	width: calc(100% - 720px);
+	width: calc(100% - 750px);
 	max-width: 100%;
 	float: right;
 	padding: 50px 30px;
@@ -623,7 +590,7 @@ ol{
 }
 
 .profile-content-text{
-	font-size: 16px;
+	font-size: 15px;
 	color: #758690;
 }
 
@@ -785,6 +752,10 @@ ol{
 	text-align: center;
 	margin: 0 10px 13px 0;
 	transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.profile-socials-list > li:last-child{
+	margin-right: 0;
 }
 
 .profile-socials-list > li:hover{
