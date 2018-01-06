@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search</title>
+	<link rel="stylesheet" href="fonts/fonts.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/mediaq.css" />
+	<link rel="stylesheet" href="css/fSelect.css" />
+</head>
+<body>
+	<header class="main-header">
+		<div class="content-wrapper clearfix">
+			<a href="#" class="header-logo">
+				<img src="img/logo.svg" alt="Service name" />
+			</a>
+			<div class="main-header-right clearfix">
+				<div class="main-header-lang-switcher">
+					<span class="current-lang">En</span>
+					<ul class="lang-list">
+						<li>En</li>
+						<li>Ru</li>
+						<li>Ua</li>
+					</ul>
+				</div>
+				<span class="header-btn" id="login-btn">Войти</span>
+			</div>
+		</div>
+	</header>
+	<div class="page-wrapper">
+		<main>
+			<div class="search-wrapper">
+				<div class="search-container">
+					<div class="search-map-container" id="search-map-container"></div>
+					<div class="place-search-block">
+						<form action="#" method="POST" class="search-place-form">
+							<input type="text" name="place-name" id="place-name" class="search-place-input" placeholder="Введите название заведения" />
+							<div class="clearfix">
+								<div class="place-search-chekbox">
+									<input type="checkbox" name="dayandnight" id="dayandnight" />
+									<label for="dayandnight">Круглосуточно</label>
+								</div>
+								<div class="place-search-chekbox">
+									<input type="checkbox" name="currently-opened" id="currently-opened" />
+									<label for="currently-opened">Открыто сейчас</label>
+								</div>
+							</div>
+							<div class="search-dropdown">
+								<label for="place-type">Тип заведения</label>
+								<select name="place-type" id="place-type" multiple class="search-dropdown-select">
+									<option value="restaurant">Ресторан</option>
+									<option value="pizza">Пиццерия</option>
+									<option value="smoke-bar">Кальян-бар</option>
+									<option value="bar">Бар</option>
+									<option value="cafe">Кафе</option>
+									<option value="bistro">Бистро</option>
+									<option value="restaurant">Ресторан</option>
+									<option value="pizza">Пиццерия</option>
+									<option value="smoke-bar">Кальян-бар</option>
+									<option value="bar">Бар</option>
+									<option value="cafe">Кафе</option>
+									<option value="bistro">Бистро</option>
+									<option value="restaurant">Ресторан</option>
+									<option value="pizza">Пиццерия</option>
+									<option value="smoke-bar">Кальян-бар</option>
+									<option value="bar">Бар</option>
+									<option value="cafe">Кафе</option>
+									<option value="bistro">Бистро</option>
+									<option value="restaurant">Ресторан</option>
+									<option value="pizza">Пиццерия</option>
+									<option value="smoke-bar">Кальян-бар</option>
+									<option value="bar">Бар</option>
+									<option value="cafe">Кафе</option>
+									<option value="bistro">Бистро</option>
+								</select>
+							</div>
+							<div class="search-dropdown">
+								<label for="services-select">Сервисы</label>
+								<select name="services" id="services-select" multiple class="search-dropdown-select">
+									<option value="banket-hall">Банкетный зал</option>
+									<option value="wine-card">Винная карта</option>
+									<option value="grill-menu">Гриль-меню</option>
+									<option value="shipment">Доставка</option>
+									<option value="food-outdoor">Еда на вынос</option>
+									<option value="smoke">Кальян</option>
+									<option value="out-hall">Летняя терраса</option>
+									<option value="mangal-menu">Мангал-меню</option>
+									<option value="parking">Парковка</option>
+									<option value="vega-menu">Постное меню</option>
+									<option value="corporatives">Корпоративы</option>
+									<option value="panorama">Панорамный вид</option>
+									<option value="hosper-menu">Хоспер-меню</option>
+									<option value="gift-cards">Подарочные сертификаты</option>
+									<option value="birthdays">Проведение дня рождения, юбилея, свидания</option>
+								</select>
+							</div>
+							<button type="submit" class="search-btn">Найти</button>
+						</form>
+					</div>
+					<div class="places-list-block">
+						
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="light-overlay"></div>
+	<div class="login-modal">
+		<div class="login-modal-content">
+			<span class="login-modal-content-heading">Вход</span>
+			<span class="login-modal-content-message">Войдите в свою учетную запись с помощью</span>
+			<div class="login-modal-btn-wrapper">
+				<span class="login-modal-btn facebook">Facebook</span>
+				<span class="login-modal-btn messenger">Messenger</span>
+			</div>
+		</div>
+	</div>
+	<!-- JS -->
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/fSelect.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFJl-oqf0NECka4ZBhXlOVfeUnLvAa-Yw"></script>
+	<script>
+		// Google maps
+		// Create and Initialise the Map (required) our google map below
+		google.maps.event.addDomListener(window, 'load', init(49.441984, 32.064614));
+
+		function init(lat, lng) {
+		// Basic options for a simple Google Map
+		var mapOptions = {
+		// How zoomed in you want the map to start at (always required)
+		zoom: 18,
+		scrollwheel: true,
+		// The latitude and longitude to center the map (always required)
+		center: new google.maps.LatLng(49.441984, 32.064614),
+		disableDefaultUI: true,
+		draggable: true,
+		styles:
+			[{featureType:"landscape",elementType:"labels",stylers:[{visibility:"on"}]},{featureType:"transit",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"labels.icon",stylers:[{visibility:"off"}]},{stylers:[{hue:"#00aaff"},{saturation:-100},{gamma:2.15},{lightness:12}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{visibility:"on"},{lightness:24}]},{featureType:"road",elementType:"geometry",stylers:[{lightness:57}]}]
+
+		};
+		var mapElement = document.getElementById('search-map-container');
+		// Create the Google Map using out element and options defined above
+		var map = new google.maps.Map(mapElement, mapOptions);
+		var image = "img/icons/icon-pin.svg";
+		// Define the Lattitude and Longitude for the map location
+		var myLatLng = new google.maps.LatLng(49.441984, 32.064614);
+		// Define the map marker characteristics
+		var mapMarker = new
+		google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: '',
+			 icon: image
+		});
+		}
+
+		// Multiselect plugin
+		$('#place-type').fSelect({
+			placeholder: 'Выберите тип заведения',
+			numDisplayed: 3,
+			overflowText: '{n} выбрано',
+			searchText: 'Поиск',
+			showSearch: true,
+			optionFormatter: false
+		});
+
+		$('#services-select').fSelect({
+			placeholder: 'Выберите сервисы',
+			numDisplayed: 3,
+			overflowText: '{n} выбрано',
+			searchText: 'Поиск',
+			showSearch: true,
+			optionFormatter: false
+		});
+	</script>
+</body>
+</html>
