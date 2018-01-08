@@ -1425,3 +1425,135 @@ button{
 .closest-place-btn:hover{
 	background-color: #3B4B55;
 }
+
+
+
+
+
+
+/* MENU CATEGORY */
+
+.profile-content-heading a{
+	color: #ff7043;
+	transition: color .3s ease;
+}
+
+.profile-content-heading a:hover{
+	color: #d85b36;
+}
+
+.bread-slash{
+	color: #D5DBDE;
+}
+
+.bread-current{
+	color: #758690;
+}
+
+.menu-categories-list > li{
+	width: calc(33.333333% - 10px);
+	height: 142px;
+	position: relative;
+	border-radius: 6px;
+	overflow: hidden;
+	float: left;
+	margin: 0 15px 15px 0;
+}
+
+.menu-categories-list > li:nth-of-type(3n){
+	margin: 0 0 15px 0;
+}
+
+.menu-categories-list > li a{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.menu-categories-list > li a::before{
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	background-image: linear-gradient(180deg, rgba(255,255,255,0), rgba(38,56,67,.9));
+}
+
+.menu-categories-list > li img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.menu-categories-list > li h3{
+	width: 100%;
+	max-width: calc(100% - 40px);
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	color: #fff;
+	margin: 0;
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+	transition: transform .3s ease;
+}
+
+.menu-categories-list > li a:hover h3{
+	transform: translateX(10px);
+}
+
+.menu-side-list{
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.menu-side-list a{
+	color: #758690;
+	transition: color .3s ease;
+}
+
+.menu-side-list a:hover{
+	color: #ff7043;
+}
+
+.menu-side-list li{
+	padding: 10px 0 0 20px;
+}
+
+.menu-side-list > li:first-of-type{
+	padding: 0 0 0 20px
+}
+
+.has-submenu > ul{
+	display: none;
+}
+
+.has-submenu > a{
+	display: inline-block;
+	position: relative;
+}
+
+.has-submenu > a::before{
+	box-sizing: border-box;
+	font-family: FontAwesome;
+	content: '\f107';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: -1px;
+	left: -20px;
+	transition: transform .6s ease;
+}
+
+.has-submenu > a.current-category{
+	color: #ff7043;
+}
+
+.has-submenu > a.active::before{
+	transform: rotate(-90deg);
+}
