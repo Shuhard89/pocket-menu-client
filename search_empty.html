@@ -36,6 +36,7 @@
 				<div class="search-container">
 					<div class="search-map-container" id="search-map-container"></div>
 					<div class="place-search-show-btn hidden">Поиск</div>
+					<div class="places-list-show-btn hidden">Заведения</div>
 					<div class="place-search-block">
 						<div class="hide-search-btn"></div>
 						<form action="#" method="POST" class="search-place-form">
@@ -103,6 +104,7 @@
 						</form>
 					</div>
 					<div class="places-list-block">
+						<div class="hide-places-list-btn"></div>
 						<div class="places-list-block-container">
 							<div class="no-places-container">
 								<h2 class="no-places-title">Заведения не найдены</h2>
@@ -198,6 +200,21 @@
 			
 			$('.place-search-block').removeClass('hidden');
 			$('.place-search-show-btn').addClass('hidden');
+		});
+
+		// Toggle places cards
+		$('.hide-places-list-btn').on('click', function(event) {
+			event.preventDefault();
+			
+			$('.places-list-block').addClass('hidden');
+			$('.places-list-show-btn').removeClass('hidden');
+		});
+
+		$('.places-list-show-btn').on('click', function(event) {
+			event.preventDefault();
+			
+			$('.places-list-show-btn').addClass('hidden');
+			$('.places-list-block').removeClass('hidden');
 		});
 	</script>
 </body>
