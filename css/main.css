@@ -430,6 +430,7 @@ button{
 }
 
 .profile-menu-btn.hidden{
+	display: inline-block;
 	opacity: 0;
 	pointer-events: none;
 }
@@ -930,7 +931,8 @@ button{
 	height: 100%;
 }
 
-.place-search-show-btn{
+.place-search-show-btn,
+.places-list-show-btn{
 	font-size: 12px;
 	line-height: 12px;
 	background-color: #263843;
@@ -946,11 +948,18 @@ button{
 	transition: opacity .3s ease .3s, transform .3s ease .3s, background-color .3s ease 0s;
 }
 
-.place-search-show-btn:hover{
+.places-list-show-btn{
+	left: inherit;
+	right: 40px;
+}
+
+.place-search-show-btn:hover,
+.places-list-show-btn:hover{
 	background-color: #3B4B55;
 }
 
-.place-search-show-btn.hidden{
+.place-search-show-btn.hidden,
+.places-list-show-btn.hidden{
 	display: block;
 	opacity: 0;
 	pointer-events: none;
@@ -978,7 +987,8 @@ button{
 	transition-delay: 0s;
 }
 
-.hide-search-btn{
+.hide-search-btn,
+.hide-places-list-btn{
 	width: 30px;
 	height: 30px;
 	background-color: #fff;
@@ -996,8 +1006,18 @@ button{
 	transition: transform .3s ease;
 }
 
+.hide-places-list-btn{
+	left: -15px;
+	right: inherit;
+	z-index: 2;
+}
+
 .hide-search-btn:hover{
 	transform: rotate(-90deg);
+}
+
+.hide-places-list-btn:hover{
+	transform: rotate(90deg);
 }
 
 .search-place-input{
@@ -1246,17 +1266,33 @@ button{
 	bottom: 0;
 	right: 40px;
 	background-color: rgba(255,255,255,.5);
-	padding: 20px;
 	border-radius: 6px 6px 0 0;
+	transition: transform .6s ease;
+	transition-delay: .3s ease;
+}
+
+.places-list-block.hidden{
+	display: block;
+	transform: translateX(150%);
+	transition-delay: 0s;
+}
+
+.places-list-block-container{
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	overflow: auto;
 }
 
-.places-list-block::-webkit-scrollbar{
+.places-list-block-container::-webkit-scrollbar{
 	width: 4px;
 	background-color: rgba(255,255,255,0);
 }
 
-.places-list-block::-webkit-scrollbar-thumb {
+.places-list-block-container::-webkit-scrollbar-thumb {
 	border-radius: 2px;
 	background-color: #ccc;
 	-webkit-transition: background-color .6s ease;
