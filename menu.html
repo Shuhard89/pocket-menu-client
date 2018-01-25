@@ -153,83 +153,108 @@
 								</li>
 							</ul>
 						</div>
-						<div class="profile-col-small">
-							<h2 class="profile-content-heading">Разделы меню</h2>
-							<ul class="menu-side-list">
-								<li class="has-submenu">
-									<a href="#">Основное</a>
-									<ul class="menu-side-sublist">
+						<div class="profile-col-small-container">
+							<div class="profile-col-small profile-col-small-search">
+								<section class="profile-content-section">
+									<form action="#" method="POST" class="search-menu-form">
+										<input type="text" name="menu-item-name" id="menu-item-name" class="menu-item-input" placeholder="Поиск..." />
+										<button type="submit" class="menu-item-submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+										<ul class="search-menu-results-list">
+											<li>
+												<a href="#">Корантини</a>
+											</li>
+											<li>
+												<a href="#">Корманделла</a>
+											</li>
+											<li>
+												<a href="#">Корчофи</a>
+											</li>
+										</ul>
+									</form>
+								</section>
+							</div>
+							<div class="profile-col-small">
+								<section class="profile-content-section">
+									<h2 class="profile-content-heading">Разделы меню</h2>
+									<ul class="menu-side-list">
 										<li class="has-submenu">
-											<a href="#">Первые блюда</a>
+											<a href="#">Основное</a>
 											<ul class="menu-side-sublist">
-												<li>
-													<a href="#">Борщ</a>
+												<li class="has-submenu">
+													<a href="#">Первые блюда</a>
+													<ul class="menu-side-sublist">
+														<li>
+															<a href="#">Борщ</a>
+														</li>
+														<li>
+															<a href="#">Бульоны</a>
+														</li>
+														<li>
+															<a href="#">Рассольники</a>
+														</li>
+														<li>
+															<a href="#">Супы</a>
+														</li>
+													</ul>
+												</li>
+												<li class="has-submenu">
+													<a href="#">Вторые блюда</a>
+													<ul class="menu-side-sublist">
+														<li>
+															<a href="#">Гарниры</a>
+														</li>
+														<li>
+															<a href="#">Блюда из мяса</a>
+														</li>
+														<li>
+															<a href="#">Блюда из птицы</a>
+														</li>
+														<li>
+															<a href="#">Блюда из рыбы</a>
+														</li>
+													</ul>
 												</li>
 												<li>
-													<a href="#">Бульоны</a>
-												</li>
-												<li>
-													<a href="#">Рассольники</a>
-												</li>
-												<li>
-													<a href="#">Супы</a>
+													<a href="#">Диетические блюда</a>
 												</li>
 											</ul>
 										</li>
 										<li class="has-submenu">
-											<a href="#">Вторые блюда</a>
+											<a href="#">Салаты</a>
 											<ul class="menu-side-sublist">
 												<li>
-													<a href="#">Гарниры</a>
+													<a href="#">Мясные салаты</a>
 												</li>
 												<li>
-													<a href="#">Блюда из мяса</a>
+													<a href="#">Овощные салаты</a>
 												</li>
 												<li>
-													<a href="#">Блюда из птицы</a>
+													<a href="#">Рыбные салаты</a>
+												</li>
+											</ul>
+										</li>
+										<li class="has-submenu">
+											<a href="#">Напитки</a>
+											<ul class="menu-side-sublist">
+												<li>
+													<a href="#">Алкоголные напитки</a>
 												</li>
 												<li>
-													<a href="#">Блюда из рыбы</a>
+													<a href="#">Безалкоголные напитки</a>
+												</li>
+												<li>
+													<a href="#">Горячие напитки</a>
 												</li>
 											</ul>
 										</li>
 										<li>
-											<a href="#">Диетические блюда</a>
+											<a href="#">Десерты</a>
 										</li>
 									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="#">Салаты</a>
-									<ul class="menu-side-sublist">
-										<li>
-											<a href="#">Мясные салаты</a>
-										</li>
-										<li>
-											<a href="#">Овощные салаты</a>
-										</li>
-										<li>
-											<a href="#">Рыбные салаты</a>
-										</li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="#">Напитки</a>
-									<ul class="menu-side-sublist">
-										<li>
-											<a href="#">Алкоголные напитки</a>
-										</li>
-										<li>
-											<a href="#">Безалкоголные напитки</a>
-										</li>
-										<li>
-											<a href="#">Горячие напитки</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Десерты</a>
-								</li>
-							</ul>
+								</section>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -308,6 +333,14 @@
 						$(this).addClass('active').next('ul').slideDown('600');
 					}
 				}
+			});
+
+			// Search example
+			$('.menu-item-input').focusin(function(event) {
+				$('.search-menu-results-list').addClass('visible');
+			});
+			$('.menu-item-input').focusout(function(event) {
+				$('.search-menu-results-list').removeClass('visible');
 			});
 		});
 	</script>

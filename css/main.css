@@ -571,14 +571,127 @@ button{
 	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
 }
 
-.profile-col-small{
+.profile-col-small-container{
 	width: calc(100% - 750px);
 	max-width: 100%;
 	float: right;
+}
+
+.profile-col-small{
 	padding: 50px 30px;
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+	margin: 0 0 20px 0;
+}
+
+.profile-col-small:last-of-type{
+	margin: 0;
+}
+
+.profile-col-small-search{
+	height: 74px;
+	padding: 20px 30px;
+	position: relative;
+	z-index: 2;
+}
+
+.menu-item-input{
+	padding: 8px 52px 8px 18px;
+	font-size: 14px;
+	line-height: 14px;
+	background-color: #F7FAFB;
+	border-radius: 4px;
+	border: 1px solid #edf4f7;
+	transition: border-color .3s ease, background-color .3s ease;
+}
+
+.menu-item-input:focus{
+	border-color: #A4D9F9;
+	background-color: #fff;
+}
+
+.search-menu-form{
+	position: relative;
+}
+
+.menu-item-submit{
+	display: block;
+	width: 34px;
+	height: 100%;
+	background-color: #1da1f2;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 12px;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 0 4px 4px 0;
+	cursor: pointer;
+}
+
+.menu-item-submit i{
+	transition: transform .3s ease;
+}
+
+.menu-item-submit:hover i{
+	transform: rotate(90deg);
+}
+
+.search-menu-results-list{
+	padding: 5px 0;
+	width: 100%;
+	position: absolute;
+	top: 42px;
+	left: 0;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 36px;
+	border-radius: 4px;
+	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+	max-height: 200px;
+	overflow: auto;
+	display: none;
+}
+
+.search-menu-results-list.visible{
+	display: block;
+}
+
+.search-menu-results-list::-webkit-scrollbar{
+	width: 4px;
+	background-color: rgba(255,255,255,0);
+}
+
+.search-menu-results-list::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: #ccc;
+	-webkit-transition: background-color .6s ease;
+	transition: background-color .6s ease;
+}
+
+.search-menu-results-list:hover::-webkit-scrollbar-thumb{
+	background-color: #ccc;
+}
+
+.search-menu-results-list > li{
+	padding: 0 18px;
+}
+
+.search-menu-results-list > li > a{
+	display: block;
+	color: #758690;
+	border-bottom: 1px solid #edf4f7;
+	transition: color .3s ease;
+}
+
+.search-menu-results-list > li > a:hover{
+	color: #263843;
+}
+
+.search-menu-results-list > li:last-of-type > a{
+	border: none;
 }
 
 .profile-content-section{
