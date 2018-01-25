@@ -937,6 +937,10 @@ button{
 .profile-websites-list > li > a{
 	display: inline-block;
 	color: #ff7043;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
 }
 
 .profile-websites-list > li > a > i{
