@@ -1091,13 +1091,11 @@ button{
 	left: 40px;
 	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
 	transition: transform .6s ease;
-	transition-delay: .3s;
 }
 
 .place-search-block.hidden{
 	display: block;
 	transform: translateX(-150%);
-	transition-delay: 0s;
 }
 
 .hide-search-btn,
