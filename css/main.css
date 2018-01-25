@@ -1399,7 +1399,7 @@ button{
 	position: absolute;
 	top: 0;
 	left: 0;
-	overflow: auto;
+	overflow: scroll;
 }
 
 .places-list-block-container::-webkit-scrollbar{
@@ -1431,6 +1431,8 @@ button{
 	display: block;
 	margin: 0 0 13px 0;
 	position: relative;
+	border-radius: 6px 6px 0 0;
+	overflow: hidden;
 }
 
 .search-place-img > img{
