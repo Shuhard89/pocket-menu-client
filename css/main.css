@@ -1844,7 +1844,8 @@ button{
 	transition: width .3s ease;
 }
 
-.menu-items-list > li > ul > li.collapsed .menu-item-info{
+.menu-items-list > li > ul > li.collapsed .menu-item-info,
+.menu-items-list > li > ul > li.no-photo .menu-item-info{
 	width: 100%;
 }
 
