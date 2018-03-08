@@ -998,6 +998,10 @@ button{
 	margin: 0 5px 0 0;
 }
 
+.profile-col-small-container-mobile-only{
+	display: none;
+}
+
 
 
 

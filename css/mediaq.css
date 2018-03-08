@@ -208,7 +208,7 @@
 	}
 
 	.profile-col-small{
-		padding: 15px;
+		padding: 25px 15px;
 		height: auto;
 	}
 
@@ -266,5 +266,14 @@
 	.profile-schedule-list > li > span:last-of-type::before{
 		top: 12px;
 		left: -17px;
+	}
+
+	.profile-col-small-container-mobile-only{
+		display: block;
+		margin: 0 0 20px 0;
+	}
+
+	.profile-content-section-desktop-only{
+		display: none;
 	}
 }
