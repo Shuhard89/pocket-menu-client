@@ -47,42 +47,80 @@
 	}
 
 	.place-header-img-container-inner{
-		padding-top: 50%;
+		padding-top: 60%;
 	}
 
 	.profile-avatar{
-		width: 140px;
-		height: 140px;
+		width: 130px;
+		height: 130px;
 		border-width: 4px;
-		margin: 0 auto 10px auto;
+		margin: 0;
 		float: none;
 		clear: both;
+		position: relative;
+		z-index: 1;
 	}
 
 	.profile-avatar-meta{
-		width: 100%;
-		color: #263843;
-		text-align: center;
+		width: calc(100% - 155px);
+		color: #fff;
 		padding: 0;
+		position: absolute;
+		bottom: 75px;
+		right: 0;
 	}
 
 	.profile-content-header{
-		margin: -90px 0 0 0;
+		margin: -70px 0 0 0;
 	}
 
 	.profile-avatar-meta h1{
 		left: 0;
+		font-size: 16px;
+		line-height: 22px;
+		color: #263843;
+		padding: 5px 20px;
+		background-color: #fff;
+		border-radius: 100px 0 0 100px;
+		margin: 0 0 15px 0;
 	}
 
 	.profile-menu-container{
-		margin: 0;
-		background-color: transparent;
 		height: auto;
+		float: none;
+		left: 0;
+		margin: 0;
+		position: absolute;
+		top: 70px;
+		width: 100%;
+		text-align: center;
+		line-height: 40px;
+		font-size: 14px;
+		background-color: #fff;
+		box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+		padding: 0 0 0 150px;
 	}
 
 	.profile-avatar-address,
 	.profile-avatar-phones a{
-		color: #758690;
+		color: #fff;
+		padding: 0 0 0 20px;
+		left: 0;
+	}
+
+	.profile-avatar-address{
+		padding: 0 10px 0 38px;
+	}
+
+	.profile-avatar-phones{
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.profile-avatar-address > i{
+		position: absolute;
+		top: 0;
+		left: 20px;
 	}
 
 	.profile-menu-container > .content-wrapper{
@@ -91,33 +129,18 @@
 
 	.profile-menu-list{
 		float: none;
-		left: 0;
 		margin: 0;
-		position: absolute;
-		top: 52px;
-		width: 100%;
-		text-align: center;
 		line-height: 40px;
 		font-size: 14px;
 	}
 
 	.profile-menu-list > li{
-		width: calc(50% - 66px);
-		display: none;
-		background-color: #fff;
-		box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+		width: auto;
 	}
 
-	.profile-menu-list > li:nth-of-type(1){
+	.profile-menu-list > li > a{
 		display: block;
-		float: left;
-		box-shadow: -5px 0 30px rgba(0, 36, 90, .1);
-	}
-
-	.profile-menu-list > li:nth-of-type(2){
-		display: block;
-		float: right;
-		box-shadow: 5px 0 30px rgba(0, 36, 90, .1);
+		padding: 0 10px;
 	}
 
 	.profile-menu-stats,
