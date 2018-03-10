@@ -104,22 +104,27 @@
 						<div class="profile-col-wide">
 							<section class="profile-content-section">
 								<h2 class="profile-content-heading">О нас</h2>
-								<div class="text-content profile-content-text">
+								<div class="text-content profile-content-text mobile-collapsable">
 									<p>Мы рады сообщить нашим гостям и ценителям вкусной кухни о новой траттории "Faro del porto", которая уютно расположилась на берегу Днепра в нескольких шагах от фитнес-клуба Sport Life.</p>
 									<p>В "Faro del porto" 2 этажа, на первом – визитная карточка заведения – открытая кухня с настоящей дровяной неаполитанской печью, предназначенной для приготовления настоящей итальянской пиццы и хлеба. Второй этаж – это банкетный зал, с балкона которого открывается вид на красавец Днепр.</p>
 								</div>
+								<span class="mobile-collapse-btn">
+									<div></div>
+								</span>
 							</section>
 							<section class="profile-content-section">
 								<h2 class="profile-content-heading">Тип заведения</h2>
-								<ul class="profile-types-list">
-									<li>Ресторан</li>
-									<li>Пиццерия</li>
-									<li>Кальян-бар</li>
-								</ul>
+								<div>
+									<ul class="profile-types-list">
+										<li>Ресторан</li>
+										<li>Пиццерия</li>
+										<li>Кальян-бар</li>
+									</ul>
+								</div>
 							</section>
 							<section class="profile-content-section">
 								<h2 class="profile-content-heading">Особенности</h2>
-								<ul class="profile-services-list">
+								<ul class="profile-services-list mobile-collapsable">
 									<li>
 										<i class="fa fa-check" aria-hidden="true"></i>
 										<span>банкетный зал</span>
@@ -181,6 +186,9 @@
 										<span>проведение дня рождения, юбилея, свидания</span>
 									</li>
 								</ul>
+								<span class="mobile-collapse-btn">
+									<div></div>
+								</span>
 							</section>
 							<section class="profile-content-section" id="profile-map-section">
 								<h2 class="profile-content-heading">Местоположение</h2>
@@ -358,6 +366,15 @@
                 likesValuePlaceholder.removeClass('animate');
 				likesValuePlaceholder.html(+likesValuePlaceholder.html() + 1);
 				likesValuePlaceholder.addClass('animate');
+			});
+
+			// Mobile collapse button
+			$('.mobile-collapse-btn').on('click', function() {
+				if ( $(this).hasClass('opened') ){
+					$(this).removeClass('opened').prev('.mobile-collapsable').removeClass('opened');
+				} else {
+					$(this).addClass('opened').prev('.mobile-collapsable').addClass('opened');
+				}
 			});
 		});
 	</script>
