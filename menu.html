@@ -453,7 +453,7 @@
 
 			$(window).on('scroll', function() {
 				if ($(window).width() < 768 ){
-					if($(window).scrollTop() + $(window).height() == $(document).height()) {
+					if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 						$('.mobile-menu-button').not('.opened').addClass('menu-btn-hidden');
 					} else {
 						$('.mobile-menu-button').removeClass('menu-btn-hidden');
