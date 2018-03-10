@@ -1857,11 +1857,10 @@ button{
 	width: calc(100% - 230px);
 	font-size: 14px;
 	line-height: 24px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+	display: block;
 	float: right;
 	transition: width .3s ease;
+	position: relative;
 }
 
 .menu-items-list > li > ul > li.collapsed .menu-item-info,
@@ -1876,6 +1875,7 @@ button{
 	font-size: 14px;
 	line-height: 18px;
 	padding: 3px 0 0 0;
+	float: left;
 }
 
 .menu-item-weight{
@@ -1884,10 +1884,14 @@ button{
 	text-align: center;
 	color: #758690;
 	font-size: 12px;
+	position: absolute;
+	top: 0;
+	left: 33.333333%;
 }
 
 .menu-item-price{
 	display: block;
+	float: right;
 	width: 33.333333%;
 	text-align: right;
 }
@@ -1906,6 +1910,7 @@ button{
 	float: left;
 	margin: 0;
 	position: relative;
+	clear: both;
 }
 
 .menu-items-list > li > ul > li.collapsed:not(.no-photo) .menu-item-info > p{

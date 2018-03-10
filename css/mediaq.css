@@ -332,4 +332,16 @@
 	.mobile-collapse-btn.opened > div{
 		transform: rotate(-225deg);
 	}
+
+	.menu-item-info > h3{
+		width: 66.666666%;
+	}
+
+	.menu-item-weight{
+		position: static;
+		width: 100%;
+		clear: both;
+		text-align: left;
+		line-height: 20px;
+	}
 }
