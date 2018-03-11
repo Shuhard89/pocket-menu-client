@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/fSelect.css" />
 </head>
 <body>
+	<div class="p-loader visible"></div>
 	<header class="main-header">
 		<div class="content-wrapper clearfix">
 			<a href="#" class="header-logo">
@@ -345,6 +346,11 @@
 				$('#dayandnight').prop('checked',false).closest('.place-search-chekbox').removeClass('disabled');
 			}
 		});
+
+		// Top line loader example
+		setTimeout(function(){
+			$('.p-loader').removeClass('visible');
+		}, 4000);
 	</script>
 </body>
 </html>
