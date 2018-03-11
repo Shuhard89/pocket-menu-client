@@ -328,6 +328,23 @@
 			$('.places-list-show-btn').addClass('hidden');
 			$('.places-list-block').removeClass('hidden');
 		});
+
+		// Disabled checkboxes
+		$('#dayandnight').on('change', function() {
+			if ( $(this).is(':checked') ){
+				$('#currently-opened').prop('checked',false).closest('.place-search-chekbox').addClass('disabled');
+			} else {
+				$('#currently-opened').prop('checked',false).closest('.place-search-chekbox').removeClass('disabled');
+			}
+		});
+
+		$('#currently-opened').on('change', function() {
+			if ( $(this).is(':checked') ){
+				$('#dayandnight').prop('checked',false).closest('.place-search-chekbox').addClass('disabled');
+			} else {
+				$('#dayandnight').prop('checked',false).closest('.place-search-chekbox').removeClass('disabled');
+			}
+		});
 	</script>
 </body>
 </html>

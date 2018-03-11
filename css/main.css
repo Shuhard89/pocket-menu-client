@@ -1212,20 +1212,20 @@ button{
 	background-color: #fff;
 	border-radius: 50%;
 	background-image: url('../img/icons/icon_cross.svg');
-	-webkit-background-size: 10px;
-	background-size: 10px;
+	-webkit-background-size: 8px;
+	background-size: 8px;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: absolute;
-	top: 0;
-	left: -8px;
+	top: -8px;
+	right: -8px;
 	cursor: pointer;
 	transition: transform .3s ease;
+	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
 }
 
 .hide-places-list-btn{
-	right: 0;
-	left: auto;
+	left: -8px;
 	z-index: 2;
 }
 
@@ -1262,6 +1262,13 @@ button{
 .place-search-chekbox{
 	width: 50%;
 	float: left;
+	user-select: none;
+	transition: opacity .3s ease;
+}
+
+.place-search-chekbox.disabled{
+	opacity: .3;
+	pointer-events: none;
 }
 
 .place-search-chekbox input{
