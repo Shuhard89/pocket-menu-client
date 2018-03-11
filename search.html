@@ -43,6 +43,7 @@
 						Поиск: <span class="search-status-text">Включен</span>
 						<div class="status-tip">
 							<p>Поиск заведений на карте работает только в пределах вашего города</p>
+							<span class="status-tip-close"></span>
 						</div>
 					</div>
 					<div class="place-search-block">
@@ -62,56 +63,61 @@
 							</div>
 							<div class="search-dropdown">
 								<label for="place-type">Тип заведения</label>
-								<select name="place-type" id="place-type" multiple class="search-dropdown-select">
-									<option value="restaurant">Ресторан</option>
-									<option value="pizza">Пиццерия</option>
-									<option value="smoke-bar">Кальян-бар</option>
-									<option value="bar">Бар</option>
-									<option value="cafe">Кафе</option>
-									<option value="bistro">Бистро</option>
-									<option value="restaurant">Ресторан</option>
-									<option value="pizza">Пиццерия</option>
-									<option value="smoke-bar">Кальян-бар</option>
-									<option value="bar">Бар</option>
-									<option value="cafe">Кафе</option>
-									<option value="bistro">Бистро</option>
-									<option value="restaurant">Ресторан</option>
-									<option value="pizza">Пиццерия</option>
-									<option value="smoke-bar">Кальян-бар</option>
-									<option value="bar">Бар</option>
-									<option value="cafe">Кафе</option>
-									<option value="bistro">Бистро</option>
-									<option value="restaurant">Ресторан</option>
-									<option value="pizza">Пиццерия</option>
-									<option value="smoke-bar">Кальян-бар</option>
-									<option value="bar">Бар</option>
-									<option value="cafe">Кафе</option>
-									<option value="bistro">Бистро</option>
-								</select>
+								<div class="search-dropdown-select-container">
+									<select name="place-type" id="place-type" multiple class="search-dropdown-select">
+										<option value="restaurant">Ресторан</option>
+										<option value="pizza">Пиццерия</option>
+										<option value="smoke-bar">Кальян-бар</option>
+										<option value="bar">Бар</option>
+										<option value="cafe">Кафе</option>
+										<option value="bistro">Бистро</option>
+										<option value="restaurant">Ресторан</option>
+										<option value="pizza">Пиццерия</option>
+										<option value="smoke-bar">Кальян-бар</option>
+										<option value="bar">Бар</option>
+										<option value="cafe">Кафе</option>
+										<option value="bistro">Бистро</option>
+										<option value="restaurant">Ресторан</option>
+										<option value="pizza">Пиццерия</option>
+										<option value="smoke-bar">Кальян-бар</option>
+										<option value="bar">Бар</option>
+										<option value="cafe">Кафе</option>
+										<option value="bistro">Бистро</option>
+										<option value="restaurant">Ресторан</option>
+										<option value="pizza">Пиццерия</option>
+										<option value="smoke-bar">Кальян-бар</option>
+										<option value="bar">Бар</option>
+										<option value="cafe">Кафе</option>
+										<option value="bistro">Бистро</option>
+									</select>
+								</div>
 							</div>
 							<div class="search-dropdown">
 								<label for="services-select">Сервисы</label>
-								<select name="services" id="services-select" multiple class="search-dropdown-select">
-									<option value="banket-hall">Банкетный зал</option>
-									<option value="wine-card">Винная карта</option>
-									<option value="grill-menu">Гриль-меню</option>
-									<option value="shipment">Доставка</option>
-									<option value="food-outdoor">Еда на вынос</option>
-									<option value="smoke">Кальян</option>
-									<option value="out-hall">Летняя терраса</option>
-									<option value="mangal-menu">Мангал-меню</option>
-									<option value="parking">Парковка</option>
-									<option value="vega-menu">Постное меню</option>
-									<option value="corporatives">Корпоративы</option>
-									<option value="panorama">Панорамный вид</option>
-									<option value="hosper-menu">Хоспер-меню</option>
-									<option value="gift-cards">Подарочные сертификаты</option>
-									<option value="birthdays">Проведение дня рождения, юбилея, свидания</option>
-								</select>
+								<div class="search-dropdown-select-container">
+									<select name="services" id="services-select" multiple class="search-dropdown-select">
+										<option value="banket-hall">Банкетный зал</option>
+										<option value="wine-card">Винная карта</option>
+										<option value="grill-menu">Гриль-меню</option>
+										<option value="shipment">Доставка</option>
+										<option value="food-outdoor">Еда на вынос</option>
+										<option value="smoke">Кальян</option>
+										<option value="out-hall">Летняя терраса</option>
+										<option value="mangal-menu">Мангал-меню</option>
+										<option value="parking">Парковка</option>
+										<option value="vega-menu">Постное меню</option>
+										<option value="corporatives">Корпоративы</option>
+										<option value="panorama">Панорамный вид</option>
+										<option value="hosper-menu">Хоспер-меню</option>
+										<option value="gift-cards">Подарочные сертификаты</option>
+										<option value="birthdays">Проведение дня рождения, юбилея, свидания</option>
+									</select>
+								</div>
 							</div>
 							<!-- <button type="submit" class="search-btn">Найти</button> -->
 						</form>
 					</div>
+					<div class="mobile-menu-overlay"></div>
 					<div class="places-list-block">
 						<div class="hide-places-list-btn"></div>
 						<div class="places-list-block-container">
@@ -297,23 +303,25 @@
 		}
 
 		// Multiselect plugin
-		$('#place-type').fSelect({
-			placeholder: 'Выберите тип заведения',
-			numDisplayed: 3,
-			overflowText: '{n} выбрано',
-			searchText: 'Поиск',
-			showSearch: true,
-			optionFormatter: false
-		});
+		if ( $(window).width() > 767 ){
+			$('#place-type').fSelect({
+				placeholder: 'Выберите тип заведения',
+				numDisplayed: 3,
+				overflowText: '{n} выбрано',
+				searchText: 'Поиск',
+				showSearch: true,
+				optionFormatter: false
+			});
 
-		$('#services-select').fSelect({
-			placeholder: 'Выберите сервисы',
-			numDisplayed: 3,
-			overflowText: '{n} выбрано',
-			searchText: 'Поиск',
-			showSearch: true,
-			optionFormatter: false
-		});
+			$('#services-select').fSelect({
+				placeholder: 'Выберите сервисы',
+				numDisplayed: 3,
+				overflowText: '{n} выбрано',
+				searchText: 'Поиск',
+				showSearch: true,
+				optionFormatter: false
+			});
+		}
 
 		// Toggle search card
 		$('.hide-search-btn').on('click', function(event) {
@@ -341,8 +349,15 @@
 		$('.places-list-show-btn').on('click', function(event) {
 			event.preventDefault();
 			
-			$('.places-list-show-btn').addClass('hidden');
-			$('.places-list-block').removeClass('hidden');
+			if ( $(this).hasClass('hidden') ){
+				$('.places-list-block').addClass('hidden');
+				$('.places-list-show-btn').removeClass('hidden');
+				$('.mobile-menu-overlay').removeClass('visible');
+			} else {
+				$('.places-list-block').removeClass('hidden');
+				$('.places-list-show-btn').addClass('hidden');
+				$('.mobile-menu-overlay').addClass('visible');
+			}
 		});
 
 		// Disabled checkboxes
@@ -366,6 +381,16 @@
 		setTimeout(function(){
 			$('.p-loader').removeClass('visible');
 		}, 4000);
+
+		// Hidden places list on mobile
+		if ( $(window).width() < 768 ){
+			$('.places-list-block').addClass('hidden');
+			$('.places-list-show-btn').removeClass('hidden');
+		}
+
+		$('.status-tip-close').on('click', function() {
+			$('.status-tip').addClass('hidden');
+		});
 	</script>
 </body>
 </html>

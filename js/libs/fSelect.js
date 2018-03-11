@@ -298,7 +298,11 @@
             }
             else {
                 window.fSelect.idx = -1;
-                $wrap.find('.fs-search input').focus();
+                if ( $(window).width() > 767 ){
+                    $wrap.find('.fs-search input').focus();
+                } else {
+                    $wrap.find('.fs-search input');
+                }
             }
         }
         else if (40 == e.which) { // down
@@ -331,7 +335,11 @@
 
     function setIndexes($wrap) {
         $wrap.find('.fs-option.hl').removeClass('hl');
-        $wrap.find('.fs-search input').focus();
+        if ( $(window).width() > 767 ){
+            $wrap.find('.fs-search input').focus();
+        } else {
+            $wrap.find('.fs-search input');
+        }
         window.fSelect.idx = -1;
     }
 

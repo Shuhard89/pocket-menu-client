@@ -1743,7 +1743,29 @@ button{
 	background-color: #db2828;
 }
 
-.status-tip{
+.status-tip-close{
+	display: none;
+	width: 21px;
+	height: 21px;
+	border-radius: 50%;
+	background-image: url(../img/icons/icon_cross.svg);
+	-webkit-background-size: 8px;
+	background-size: 8px;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	cursor: pointer;
+	transition: transform .3s ease;
+}
+
+.search-status.deactivated .status-tip-close{
+	display: block;
+}
+
+.status-tip,
+.status-tip.hidden{
 	width: 300px;
 	padding: 15px 20px;
 	border-radius: 6px;
@@ -1784,6 +1806,18 @@ button{
 	opacity: 1;
 	transform: translateY(0);
 	pointer-events: auto;
+}
+
+.info-window{
+	padding: 8px 0 0 0;
+}
+
+.info-window > a{
+	border-radius: 6px;
+}
+
+.info-window .search-place-info{
+	padding: 0;
 }
 
 
