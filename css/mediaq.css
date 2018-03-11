@@ -587,13 +587,13 @@
 		position: fixed;
 		z-index: 109;
 		width: 100%;
-		height: auto;
-		max-height: 100%;
+		max-width: 420px;
+		height: 100%;
 		background-color: #fff;
 		bottom: 0;
-		left: 0;
+		right: 0;
 		top: inherit;
-		right: inherit;
+		left: inherit;
 		padding: 0;
 		transform: translateY(0);
 		overflow: auto;
