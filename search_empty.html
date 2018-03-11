@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/fSelect.css" />
 </head>
 <body>
+	<div class="p-loader visible"></div>
 	<header class="main-header">
 		<div class="content-wrapper clearfix">
 			<a href="#" class="header-logo">
@@ -37,7 +38,9 @@
 					<div class="search-map-container" id="search-map-container"></div>
 					<div class="place-search-show-btn hidden">Поиск</div>
 					<div class="places-list-show-btn hidden">Заведения</div>
+					<span class="btn-geo" title="Определить мое местоположение"></span>
 					<div class="place-search-block">
+						<h2>Поиск</h2>
 						<div class="hide-search-btn"></div>
 						<form action="#" method="POST" class="search-place-form">
 							<input type="text" name="place-name" id="place-name" class="search-place-input" placeholder="Введите название заведения" />
@@ -100,7 +103,7 @@
 									<option value="birthdays">Проведение дня рождения, юбилея, свидания</option>
 								</select>
 							</div>
-							<button type="submit" class="search-btn">Найти</button>
+							<!-- <button type="submit" class="search-btn">Найти</button> -->
 						</form>
 					</div>
 					<div class="places-list-block">
@@ -127,6 +130,9 @@
 				<span class="login-modal-btn messenger">Messenger</span>
 			</div>
 		</div>
+	</div>
+	<div class="modal-msg">
+		<p>Заведений по вашему запросу не найдено</p>
 	</div>
 	<!-- JS -->
 	<script src="js/libs/jquery-3.2.1.min.js"></script>
@@ -215,6 +221,38 @@
 			
 			$('.places-list-show-btn').addClass('hidden');
 			$('.places-list-block').removeClass('hidden');
+		});
+
+		// Disabled checkboxes
+		$('#dayandnight').on('change', function() {
+			if ( $(this).is(':checked') ){
+				$('#currently-opened').prop('checked',false).closest('.place-search-chekbox').addClass('disabled');
+			} else {
+				$('#currently-opened').prop('checked',false).closest('.place-search-chekbox').removeClass('disabled');
+			}
+		});
+
+		$('#currently-opened').on('change', function() {
+			if ( $(this).is(':checked') ){
+				$('#dayandnight').prop('checked',false).closest('.place-search-chekbox').addClass('disabled');
+			} else {
+				$('#dayandnight').prop('checked',false).closest('.place-search-chekbox').removeClass('disabled');
+			}
+		});
+
+		// Top line loader example
+		setTimeout(function(){
+			$('.p-loader').removeClass('visible');
+		}, 4000);
+
+		// Search closest place (not found) example
+		var modalMsgTimeout;
+		$('.closest-place-btn').on('click', function() {
+			$('.modal-msg').addClass('visible');
+			clearTimeout(modalMsgTimeout);
+			var modalMsgTimeout = setTimeout(function(){
+				$('.modal-msg').removeClass('visible');
+			}, 2000);
 		});
 	</script>
 </body>
