@@ -644,4 +644,16 @@
 	.status-tip::after{
 		bottom: -14px;
 	}
+
+	.modal-msg{
+		width: calc(100% - 40px);
+		left: 20px;
+		transform: translate(0, 0);
+		z-index: 200;
+		padding: 20px;
+	}
+
+	.modal-msg.visible{
+		transform: translate(0, -50%);
+	}
 }

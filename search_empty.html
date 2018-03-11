@@ -43,6 +43,7 @@
 						Поиск: <span class="search-status-text">Включен</span>
 						<div class="status-tip">
 							<p>Поиск заведений на карте работает только в пределах вашего города</p>
+							<span class="status-tip-close"></span>
 						</div>
 					</div>
 					<div class="place-search-block">
@@ -89,6 +90,7 @@
 									<option value="bistro">Бистро</option>
 								</select>
 							</div>
+							<div class="mobile-menu-overlay"></div>
 							<div class="search-dropdown">
 								<label for="services-select">Сервисы</label>
 								<select name="services" id="services-select" multiple class="search-dropdown-select">
@@ -234,8 +236,15 @@
 		$('.places-list-show-btn').on('click', function(event) {
 			event.preventDefault();
 			
-			$('.places-list-show-btn').addClass('hidden');
-			$('.places-list-block').removeClass('hidden');
+			if ( $(this).hasClass('hidden') ){
+				$('.places-list-block').addClass('hidden');
+				$('.places-list-show-btn').removeClass('hidden');
+				$('.mobile-menu-overlay').removeClass('visible');
+			} else {
+				$('.places-list-block').removeClass('hidden');
+				$('.places-list-show-btn').addClass('hidden');
+				$('.mobile-menu-overlay').addClass('visible');
+			}
 		});
 
 		// Disabled checkboxes
@@ -268,6 +277,16 @@
 			var modalMsgTimeout = setTimeout(function(){
 				$('.modal-msg').removeClass('visible');
 			}, 2000);
+		});
+
+		// Hidden places list on mobile
+		if ( $(window).width() < 768 ){
+			$('.places-list-block').addClass('hidden');
+			$('.places-list-show-btn').removeClass('hidden');
+		}
+
+		$('.status-tip-close').on('click', function() {
+			$('.status-tip').addClass('hidden');
 		});
 	</script>
 </body>
