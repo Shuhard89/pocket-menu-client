@@ -192,23 +192,25 @@
 		}
 
 		// Multiselect plugin
-		$('#place-type').fSelect({
-			placeholder: 'Выберите тип заведения',
-			numDisplayed: 3,
-			overflowText: '{n} выбрано',
-			searchText: 'Поиск',
-			showSearch: true,
-			optionFormatter: false
-		});
+		if ( $(window).width() > 767 ){
+			$('#place-type').fSelect({
+				placeholder: 'Выберите тип заведения',
+				numDisplayed: 3,
+				overflowText: '{n} выбрано',
+				searchText: 'Поиск',
+				showSearch: true,
+				optionFormatter: false
+			});
 
-		$('#services-select').fSelect({
-			placeholder: 'Выберите сервисы',
-			numDisplayed: 3,
-			overflowText: '{n} выбрано',
-			searchText: 'Поиск',
-			showSearch: true,
-			optionFormatter: false
-		});
+			$('#services-select').fSelect({
+				placeholder: 'Выберите сервисы',
+				numDisplayed: 3,
+				overflowText: '{n} выбрано',
+				searchText: 'Поиск',
+				showSearch: true,
+				optionFormatter: false
+			});
+		}
 
 		// Toggle search card
 		$('.hide-search-btn').on('click', function(event) {
