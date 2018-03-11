@@ -656,4 +656,40 @@
 	.modal-msg.visible{
 		transform: translate(0, -50%);
 	}
+
+	.bg-404{
+		font-size: 160px;
+	}
+
+	.container-404-content{
+		padding: 0 15px;
+	}
+
+	.container-404-content > h1{
+		font-size: 20px;
+		line-height: 30px;
+		margin: 0 0 10px 0;
+	}
+
+	.container-404-content > a{
+		font-size: 12px;
+		line-height: 22px;
+	}
+
+	.container-404-content > p{
+		margin: 0 0 20px 0;
+	}
+
+	.page-wrapper,
+	.container-404{
+		min-height: calc(100vh - 148px);
+	}
+
+	.container-404{
+		height: calc(100vh - 148px);
+	}
+
+	.container-404-content{
+		top: calc(50% - 75px);
+	}
 }
