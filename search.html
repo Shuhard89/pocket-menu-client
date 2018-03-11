@@ -39,6 +39,12 @@
 					<div class="place-search-show-btn hidden">Поиск</div>
 					<div class="places-list-show-btn hidden">Заведения</div>
 					<span class="btn-geo" title="Определить мое местоположение"></span>
+					<div class="search-status">
+						Поиск: <span class="search-status-text">Включен</span>
+						<div class="status-tip">
+							<p>Поиск заведений на карте работает только в пределах вашего города</p>
+						</div>
+					</div>
 					<div class="place-search-block">
 						<h2>Поиск</h2>
 						<div class="hide-search-btn"></div>
@@ -278,6 +284,15 @@
 			map: map,
 			title: '',
 			 icon: image
+		});
+		// On gmap zoom example
+		google.maps.event.addListener(map, 'zoom_changed', function() {
+		    zoomLevel = map.getZoom();
+		    if (zoomLevel <= 12) {
+		        $('.search-status').addClass('deactivated').find('.search-status-text').html('Выключен');
+		    } else {
+		        $('.search-status').removeClass('deactivated').find('.search-status-text').html('Включен');
+		    }
 		});
 		}
 
