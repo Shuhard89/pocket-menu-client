@@ -1567,6 +1567,7 @@ button{
 
 .search-place-img{
 	display: block;
+	height: 171px;
 	margin: 0 0 13px 0;
 	position: relative;
 	border-radius: 6px 6px 0 0;
