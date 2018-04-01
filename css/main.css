@@ -2250,3 +2250,7 @@ button{
 .mobile-map-modal{
 	display: none;
 }
+
+.header-btn i{
+	margin: 0 5px 0 0;
+}
