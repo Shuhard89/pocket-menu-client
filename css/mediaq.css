@@ -692,4 +692,15 @@
 	.container-404-content{
 		top: calc(50% - 75px);
 	}
+
+	.to-top-btn{
+		right: 0;
+		bottom: 60px;
+		border-radius: 50% 0 0 50%;
+		transform: translateX(100%);
+	}
+
+	.to-top-btn.visible{
+		transform: translateX(0);
+	}
 }

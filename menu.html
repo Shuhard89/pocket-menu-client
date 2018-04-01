@@ -314,6 +314,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="to-top-btn">
+		<div></div>
+	</div>
 	<!-- JS -->
 	<script src="js/libs/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
@@ -459,6 +462,21 @@
 						$('.mobile-menu-button').removeClass('menu-btn-hidden');
 					}
 				}
+			});
+
+			// To top button
+			$(window).on('scroll', function() {
+				if ( $(window).scrollTop() > 500 && $(window).scrollTop() + $(window).height() < $(document).height() - 40 ){
+					$('.to-top-btn').addClass('visible');
+				} else {
+					$('.to-top-btn').removeClass('visible');
+				}
+			});
+
+			$('.to-top-btn').on('click', function() {
+				$('html, body').stop().animate({
+					scrollTop: 0
+				}, 600);
 			});
 		});
 	</script>

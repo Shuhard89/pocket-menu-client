@@ -2202,3 +2202,47 @@ button{
 .container-404-content > a:hover{
 	box-shadow: 0 5px 30px rgba(0, 36, 90, .5);
 }
+
+
+
+
+
+
+
+.to-top-btn{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+	position: fixed;
+	bottom: 25px;
+	right: 20px;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(.6);
+	transition: transform .6s ease, opacity .6s ease, box-shadow .3s ease;
+}
+
+.to-top-btn.visible{
+	pointer-events: auto;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.to-top-btn:hover{
+	box-shadow: 0 5px 30px rgba(0, 36, 90, .2);
+}
+
+.to-top-btn > div{
+	width: 8px;
+	height: 8px;
+	border-left: 1px solid #758690;
+	border-bottom: 1px solid #758690;
+	transform: rotate(-225deg);
+	position: absolute;
+	bottom: calc(50% - 6px);
+	left: calc(50% - 4px);
+	transition: border-color .3s ease;
+}
