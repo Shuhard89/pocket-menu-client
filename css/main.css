@@ -2246,3 +2246,7 @@ button{
 	left: calc(50% - 4px);
 	transition: border-color .3s ease;
 }
+
+.mobile-map-modal{
+	display: none;
+}
