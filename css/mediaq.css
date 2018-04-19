@@ -470,8 +470,16 @@
 
 	.place-search-chekbox label{
 		font-size: 13px;
-		line-height: 28px;
+		line-height: 17px;
 		padding: 0 0 0 25px;
+	}
+
+	.place-search-chekbox {
+		line-height: 17px;
+	}
+
+	.place-search-chekbox label::before {
+		top: -1px;
 	}
 
 	.search-dropdown .fs-dropdown .fs-options{
@@ -759,5 +767,27 @@
 
 	.profile-map-container-inner > iframe{
 		pointer-events: none;
+	}
+
+	.search-dropdown label,
+	.search-place-form-buttons > p {
+		margin: 0 0 2px 0;
+	}
+
+	.search-dropdown,
+	.search-place-form-buttons {
+		margin: 8px 0 0 0;
+	}
+
+	.search-place-form-btn {
+		font-size: 12px;
+	}
+
+	.search-place-input {
+		margin: 0 0 10px 0;
+	}
+
+	.place-search-chekbox label::after {
+		top: 0;
 	}
 }
