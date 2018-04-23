@@ -823,27 +823,56 @@
 
 	.place-search-block {
 		top: -50px;
+		left: 0;
 	}
 
 	.search-place-form {
-		max-height: calc(100vh - 158px);
+		max-height: calc(100vh - 145px);
 		overflow: auto;
 		padding: 15px;
 	}
 
 	.place-search-block {
 		padding: 50px 0 0 0;
-		border-radius: 0 6px 6px 6px;
+		border-radius: 0;
 	}
 
 	.place-search-block > h2 {
 		height: 50px;
 		line-height: 48px;
-		border-radius: 0 6px 0 0;
+		border-radius: 0;
 		padding: 4px 15px 0 15px;
+		text-align: left;
+		padding: 4px 15px 0 40px;
+		text-transform: none;
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: 0;
 	}
 
 	.hide-search-btn {
 		top: 12px;
+		right: auto;
+		left: 3px;
+	}
+
+	.places-list-show-btn {
+		text-align: left;
+	}
+
+	.places-list-show-btn::after {
+		right: auto;
+		left: 16px;
+	}
+
+	.place-search-show-btn {
+		right: auto;
+		left: 15px;
+		text-transform: none;
+	}
+
+	.places-list-block {
+		right: auto;
+		left: 0;
 	}
 }
