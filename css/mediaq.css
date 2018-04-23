@@ -810,7 +810,7 @@
 	}
 
 	.place-search-block {
-		top: -33px;
+		top: -50px;
 	}
 
 	.search-place-form {
@@ -820,12 +820,18 @@
 	}
 
 	.place-search-block {
-		padding: 33px 0 0 0;
+		padding: 50px 0 0 0;
 		border-radius: 0 6px 6px 6px;
 	}
 
 	.place-search-block > h2 {
+		height: 50px;
+		line-height: 48px;
 		border-radius: 0 6px 0 0;
-		background: #22323C;
+		padding: 4px 15px 0 15px;
+	}
+
+	.hide-search-btn {
+		top: 12px;
 	}
 }
