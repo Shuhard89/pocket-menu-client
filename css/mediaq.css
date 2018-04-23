@@ -460,7 +460,7 @@
 
 	.place-search-block{
 		max-width: calc(100% - 30px);
-		padding: 48px 15px 15px 15px;
+		padding: 48px 0 15px 0;
 	}
 
 	.place-search-block > h2{
@@ -789,5 +789,43 @@
 
 	.place-search-chekbox label::after {
 		top: 0;
+	}
+
+	.search-place-form {
+		max-height: calc(100vh - 178px);
+		overflow: auto;
+		padding: 0 15px;
+	}
+}
+
+@media all and (max-width: 767px) and (orientation: landscape) {
+	.search-status {
+		left: auto;
+		right: 55px;
+	}
+
+	.btn-geo {
+		left: auto;
+		right: 10px;
+	}
+
+	.place-search-block {
+		top: -33px;
+	}
+
+	.search-place-form {
+		max-height: calc(100vh - 158px);
+		overflow: auto;
+		padding: 15px;
+	}
+
+	.place-search-block {
+		padding: 33px 0 0 0;
+		border-radius: 0 6px 6px 6px;
+	}
+
+	.place-search-block > h2 {
+		border-radius: 0 6px 0 0;
+		background: #22323C;
 	}
 }
