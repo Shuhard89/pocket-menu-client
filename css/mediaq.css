@@ -796,6 +796,18 @@
 		overflow: auto;
 		padding: 0 15px;
 	}
+
+	.gmap-info-window {
+		width: 290px;
+	}
+
+	.gmap-info-window-img {
+		width: 155px;
+	}
+
+	.gmap-info-window-meta {
+		padding: 7px 0 0 170px;
+	}
 }
 
 @media all and (max-width: 767px) and (orientation: landscape) {

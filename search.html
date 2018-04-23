@@ -319,6 +319,25 @@
 			title: '',
 			 icon: image
 		});
+
+        var contentString = '<div class="gmap-info-window clearfix">'+
+        	'<a href="#" class="gmap-info-window-img"><img src="img/placeholder_content/place_preview.png"></a>'+
+        	'<div class="gmap-info-window-meta">'+
+        	'<h6><a href="#">Faro del Porto</a></h6>'+
+        	'<ul class="gmap-info-window-phones"><li><a href="tel:+380672431680"><i class="fa fa-phone" aria-hidden="true"></i><span>067 243 1680</span></a></li><li><a href="tel:+380472590100"><i class="fa fa-phone" aria-hidden="true"></i><span>0472 590 100</span></a></li></ul>'+
+        	'<div class="gmap-info-window-link-container"><a href="#">Подробнее</a></div>'+
+        	'</div>'
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString,
+          pixelOffset: new google.maps.Size(-3, 20)
+        });
+
+        mapMarker.addListener('click', function() {
+          infowindow.open(map, mapMarker);
+        });
+
 		// On gmap zoom example
 		google.maps.event.addListener(map, 'zoom_changed', function() {
 		    zoomLevel = map.getZoom();
