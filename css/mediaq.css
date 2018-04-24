@@ -819,68 +819,26 @@
 }
 
 @media all and (max-width: 767px) and (orientation: landscape) {
-	.search-status {
-		left: auto;
-		right: 55px;
+	.rotate-device-overlay {
+		display: block;
 	}
 
-	.btn-geo {
-		left: auto;
-		right: 10px;
+	.rotate-device-overlay {
+		display: block;
 	}
 
-	.place-search-block {
-		top: -50px;
-		left: 0;
+	.rotate-device-overlay .phone {
+		-webkit-animation: sizeIncrease .5s forwards ease,  borderIncrease .5s .5s forwards ease,  rotateRight .7s 1s forwards ease;
+		animation: sizeIncrease .5s forwards ease,  borderIncrease .5s .5s forwards ease,  rotateRight .7s 1s forwards ease;
 	}
 
-	.search-place-form {
-		max-height: calc(100vh - 145px);
-		overflow: auto;
-		padding: 15px;
+	.rotate-device-overlay .phone i {
+		-webkit-animation: fadeIn .5s .8s forwards ease;
+		animation: fadeIn .5s .8s forwards ease;
 	}
 
-	.place-search-block {
-		padding: 50px 0 0 0;
-		border-radius: 0;
-	}
-
-	.place-search-block > h2 {
-		height: 50px;
-		line-height: 48px;
-		border-radius: 0;
-		padding: 4px 15px 0 15px;
-		text-align: left;
-		padding: 4px 15px 0 40px;
-		text-transform: none;
-		font-size: 14px;
-		font-weight: bold;
-		letter-spacing: 0;
-	}
-
-	.hide-search-btn {
-		top: 12px;
-		right: auto;
-		left: 3px;
-	}
-
-	.places-list-show-btn {
-		text-align: left;
-	}
-
-	.places-list-show-btn::after {
-		right: auto;
-		left: 16px;
-	}
-
-	.place-search-show-btn {
-		right: auto;
-		left: 15px;
-		text-transform: none;
-	}
-
-	.places-list-block {
-		right: auto;
-		left: 0;
+	.rotate-device-overlay p {
+		-webkit-animation: fadeIn .5s 1.3s forwards ease;
+		animation: fadeIn .5s 1.3s forwards ease;
 	}
 }
