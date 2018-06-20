@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Profile</title>
+	<link rel="stylesheet" href="fonts/fonts.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mediaq.css">
+</head>
+<body>
+	<header class="main-header">
+		<div class="content-wrapper clearfix">
+			<a href="#" class="header-logo">
+				<img src="img/logo.svg" alt="Service name" />
+			</a>
+			<div class="main-header-right clearfix">
+				<div class="main-header-lang-switcher">
+					<span class="current-lang">En</span>
+					<ul class="lang-list">
+						<li>En</li>
+						<li>Ru</li>
+						<li>Ua</li>
+					</ul>
+				</div>
+				<a href="search.html" class="header-btn"><i class="fa fa-map-marker" aria-hidden="true"></i> Поиск</a>
+			</div>
+		</div>
+	</header>
+	<div class="page-wrapper">
+		<main>
+			<div class="profile-cols-wrapper">
+				<div class="content-wrapper clearfix">
+					<div class="profile-col-small-container profile-col-small-container-settings">
+						<div class="profile-col-small profile-col-small-settings">
+							<section class="profile-content-section">
+								<h2 class="profile-content-heading">Личный кабинет</h2>
+								<ul class="user-profile-menu-list">
+									<li>
+										<a href="#" class="active">Мой профиль</a>
+									</li>
+									<li>
+										<a href="#">Мои заказы</a>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="profile-col-wide profile-col-wide-settings">
+						<section class="profile-content-section">
+							<h2 class="profile-content-heading">Настройки профиля</h2>
+							<form action="#" method="POST" class="modal-order-form">
+								<div class="modal-order-form-input-wrapper half">
+									<label for="user-name">Ваше имя *</label>
+									<input type="text" name="user-name" id="user-name" placeholder="Введите имя" />
+								</div>
+								<div class="modal-order-form-input-wrapper half">
+									<label for="user-tel">Ваш номер телефона *</label>
+									<input type="text" name="user-tel" id="user-tel" placeholder="Введите номер телефон" />
+								</div>
+								<div class="modal-order-form-input-wrapper">
+									<label for="user-address">Ваш адрес *</label>
+									<textarea name="user-address" id="user-address" rows="2" placeholder="Введите ваш адрес (улица, дом, подъезд, этаж, номер квартиры)"></textarea>
+								</div>
+								<div class="order-submit-btn-container clearfix">
+									<button type="submit" class="order-finish-btn">Сохранить изменения</button>
+								</div>
+							</form>
+						</section>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer class="main-footer">
+		<div class="content-wrapper clearfix">
+			<span class="footer-copy">Copyright 2017 Pocket Menu - All Right Reserved</span>
+			<ul class="footer-menu-list clearfix">
+				<li>
+					<a href="#">Policy</a>
+				</li>
+				<li>
+					<a href="#">Terms &amp; Conditions</a>
+				</li>
+				<li>
+					<a href="#">Help</a>
+				</li>
+				<li>
+					<a href="#">FAQ</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<div class="light-overlay"></div>
+	<div class="to-top-btn">
+		<div></div>
+	</div>
+	<!-- JS -->
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(function() {
+			// Mobile collapse button
+			$('.mobile-collapse-btn').on('click', function() {
+				if ( $(this).hasClass('opened') ){
+					$(this).removeClass('opened').prev('.mobile-collapsable').removeClass('opened');
+				} else {
+					$(this).addClass('opened').prev('.mobile-collapsable').addClass('opened');
+				}
+			});
+
+			// To top button
+			$(window).on('scroll', function() {
+				if ( $(window).scrollTop() > 500 && $(window).scrollTop() + $(window).height() < $(document).height() - 40 ){
+					$('.to-top-btn').addClass('visible');
+				} else {
+					$('.to-top-btn').removeClass('visible');
+				}
+			});
+
+			$('.to-top-btn').on('click', function() {
+				$('html, body').stop().animate({
+					scrollTop: 0
+				}, 600);
+			});
+
+
+			// Validate form function
+			var orderFormValidationStatus;
+			function orderFormValidation(){
+				var form = $('.modal-order-form'),
+					inputsText = $('#user-name, #user-address'),
+					inputPhone = $('#user-tel');
+				orderFormValidationStatus = true;
+
+				function validateName($name) {
+					var nameReg = /^[a-zA-Zа-яА-Я. ]{2,3000}$/;
+					return nameReg.test( $name );
+				}
+
+				function validatePhone($phone) {
+					var phoneReg = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
+					return phoneReg.test( $phone );
+				}
+
+				function validateMessage($message) {
+					var messageReg = /^[a-zA-Zа-яА-Я0-9 ]{10,3000}$/;
+					return messageReg.test( $message );
+				}
+
+				function validateEmail($email) {
+					var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})$/;
+					return emailReg.test( $email );
+				}
+
+				inputsText.each(function(index, el) {
+					var thisEl = $(this);
+					if ( !validateName( $(this).val() ) ){
+						$(this).parents('.modal-order-form-input-wrapper').addClass('invalid');
+						setTimeout(function(){
+							thisEl.parents('.modal-order-form-input-wrapper').removeClass('invalid');
+						}, 800);
+						orderFormValidationStatus = false;
+					}
+				});
+
+				if ( !validatePhone( inputPhone.val() ) ){
+					inputPhone.parents('.modal-order-form-input-wrapper').addClass('invalid');
+					setTimeout(function(){
+						inputPhone.parents('.modal-order-form-input-wrapper').removeClass('invalid');
+					}, 800);
+					orderFormValidationStatus = false;
+				}
+
+				return orderFormValidationStatus;
+			};
+
+			// Submit profile form
+			$('.modal-order-form').on('submit', function(event) {
+				event.preventDefault();
+				
+				if ( orderFormValidation() ) {
+					// Button reaction example
+					$('.order-finish-btn').addClass('loading');
+					setTimeout(function(){
+						$('.order-finish-btn').removeClass('loading').addClass('done').html('Сохранено');
+						setTimeout(function(){
+							$('.order-finish-btn').removeClass('done').html('Сохранить изменения');
+						}, 2000);
+					}, 2000);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

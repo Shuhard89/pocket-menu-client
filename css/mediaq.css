@@ -54,6 +54,14 @@
 		right: 15px;
 		left: inherit;
 	}
+
+	.profile-col-wide.profile-col-wide-settings {
+		margin: 20px 0 0 0;
+	}
+
+	.profile-col-small-container.profile-col-small-container-settings {
+		margin: 0;
+	}
 }
 
 @media all and ( max-width: 767px ){
