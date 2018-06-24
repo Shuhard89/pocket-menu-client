@@ -2,6 +2,10 @@
 	.content-wrapper{
 		max-width: 960px;
 	}
+
+	.user-profile-orders-list > li {
+		padding: 45px 20px 35px 20px;
+	}
 }
 
 @media all and ( max-width: 1010px ){
@@ -940,6 +944,14 @@
 	.modal-message-pane > p {
 		font-size: 15px;
 		line-height: 22px;
+	}
+
+	.user-profile-orders-list > li {
+		width: 100%;
+	}
+
+	.user-profile-orders-list > li {
+		margin: 0 0 20px 0;
 	}
 }
 
