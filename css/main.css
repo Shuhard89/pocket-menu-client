@@ -3707,8 +3707,8 @@ button{
 .user-profile-orders-list > li{
 	display: block;
 	width: calc(50% - 10px);
-	border-radius: 4px;
-	box-shadow: 0 0 0 1px #edf4f7;
+	border-radius: 6px;
+	box-shadow: 0 0 15px rgba(0, 36, 90, .08);
 	background-color: #fff;
 	position: relative;
 	padding: 45px 20px 35px 40px;
@@ -3785,4 +3785,64 @@ button{
 
 .profile-col-wide-settings-orders {
 	padding-bottom: 10px;
+}
+
+
+/* PAGE - USER PROFILE - FAVOURITES */
+
+.favourites-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.favourites-list > li {
+	position: relative;
+	width: calc(33.3333% - 10px);
+	border-radius: 6px;
+	background-color: #fff;
+	margin: 0 15px 15px 0;
+	padding: 0 0 10px 0;
+	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+}
+
+.favourites-list > li:nth-of-type(3n) {
+	margin: 0 0 15px 0;
+}
+
+.favourites-list > li .search-place-img {
+	height: 143px;
+}
+
+.favourites-list > li {
+	padding: 0 0 47px 0;
+}
+
+.fav-item-footer {
+	width: calc(100% - 40px);
+	position: absolute;
+	left: 20px;
+	bottom: 10px;
+}
+
+.fav-remove-btn {
+	width: 21px;
+	height: 21px;
+	background-color: #fff;
+	border-radius: 50%;
+	background-image: url(../img/icons/icon_cross.svg);
+	-webkit-background-size: 8px;
+	background-size: 8px;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	cursor: pointer;
+	transition: transform .3s ease;
+	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
+	z-index: 2;
+}
+
+.fav-remove-btn:hover {
+	transform: rotate(90deg);
 }

@@ -6,6 +6,22 @@
 	.user-profile-orders-list > li {
 		padding: 45px 20px 35px 20px;
 	}
+
+	.favourites-list > li {
+		width: calc(50% - 8px);
+	}
+
+	.favourites-list > li:nth-of-type(even) {
+		margin: 0 0 15px 0;
+	}
+
+	.favourites-list > li:nth-of-type(3n) {
+		margin: 0 15px 15px 0;
+	}
+
+	.favourites-list > li .search-place-img {
+		height: 172px;
+	}
 }
 
 @media all and ( max-width: 1010px ){
@@ -65,6 +81,10 @@
 
 	.profile-col-small-container.profile-col-small-container-settings {
 		margin: 0;
+	}
+
+	.favourites-list > li .search-place-img {
+		height: auto;
 	}
 }
 
@@ -951,6 +971,18 @@
 	}
 
 	.user-profile-orders-list > li {
+		margin: 0 0 20px 0;
+	}
+}
+
+@media all and ( max-width: 560px ){
+	.favourites-list > li {
+		width: 100%;
+		margin: 0 0 20px 0;
+	}
+
+	.favourites-list > li:nth-of-type(even),
+	.favourites-list > li:nth-of-type(3n) {
 		margin: 0 0 20px 0;
 	}
 }
