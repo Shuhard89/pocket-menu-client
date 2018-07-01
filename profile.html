@@ -41,7 +41,20 @@
 					<div class="content-wrapper">
 						<div class="profile-avatar-container clearfix">
 							<div class="profile-avatar">
-								<img src="img/placeholder_content/profile_avatar.jpg" alt="Faro del Porto">
+								<div class="profile-avatar-inner">
+									<img src="img/placeholder_content/profile_avatar.jpg" alt="Faro del Porto">
+								</div>
+								<div class="avatar-btns-container">
+									<span class="avatar-btn add-to-fav-btn" title="Добавить в избранное">
+										<!-- Remove "o" from class if active -->
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+									</span>
+									<span class="avatar-btn like-btn" title="Мне нравится">
+										<!-- Remove "o" from class if active -->
+										<i class="fa fa-heart-o" aria-hidden="true"></i>
+										<span>998</span>
+									</span>
+								</div>
 							</div>
 							<div class="profile-avatar-meta">
 								<h1>Faro del porto</h1>
@@ -68,13 +81,15 @@
 								<span class="likes-value">389</span>
 							</div>
 							<div class="profile-menu-btns-container">
-								<span class="profile-menu-btn like" id="like-btn">
+								<span class="profile-menu-btn" id="like-btn">
 									Мне нравится
-									<i class="fa fa-thumbs-up" aria-hidden="true">
-										<span>389</span>
-									</i>
+									<i class="fa fa-heart-o" aria-hidden="true"></i>
 								</span>
-								<!--<span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span>-->
+								<span class="profile-menu-btn" id="add-to-fav-btn">
+									В избранное
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</span>
+								<!-- <span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span> -->
 							</div>
 						</div>
 					</div>
@@ -347,6 +362,19 @@
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.4493992538396!2d32.098394916080764!3d49.43822267934862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14b122bb27f69%3A0xed5b7d5ab9a8c503!2z0KTQsNGA0L4g0LTQtdC70Ywg0J_QvtGA0YLQvg!5e0!3m2!1sru!2sua!4v1511695599885" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 	</div>
+	<div class="modal-default" id="fav-register-modal">
+		<div class="modal-default-pane">
+			<h6 class="modal-default-pane-header">Регистрация</h6>
+			<div class="modal-default-pane-content">
+				<p>Добавлять заведения в избранное могут только зарегистрированные пользователи.</p>
+				<p class="text-center">
+					<b>Зарегистрироваться через:</b>
+				</p>
+				<span class="facebook-reg-button">Facebook</span>
+			</div>
+			<div class="close-default-modal-btn"></div>
+		</div>
+	</div>
 	<div class="to-top-btn">
 		<div></div>
 	</div>
@@ -412,6 +440,16 @@
 			$('.close-map-modal').on('click', function(event) {
 				$('.mobile-map-modal').removeClass('visible');
 				$('html, body').removeClass('overflow-hidden');
+			});
+
+			// Default modal example
+			$('.add-to-fav-btn, #add-to-fav-btn').on('click', function() {
+				$('#fav-register-modal').addClass('visible');
+			});
+
+			// Close default modal
+			$('.close-default-modal-btn').on('click', function() {
+				$(this).closest('.modal-default').removeClass('visible');
 			});
 		});
 	</script>

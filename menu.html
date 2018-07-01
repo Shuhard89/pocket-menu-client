@@ -41,7 +41,20 @@
 					<div class="content-wrapper">
 						<div class="profile-avatar-container clearfix">
 							<div class="profile-avatar">
-								<img src="img/placeholder_content/profile_avatar.jpg" alt="Faro del Porto">
+								<div class="profile-avatar-inner">
+									<img src="img/placeholder_content/profile_avatar.jpg" alt="Faro del Porto">
+								</div>
+								<div class="avatar-btns-container">
+									<span class="avatar-btn add-to-fav-btn" title="Добавить в избранное">
+										<!-- Remove "o" from class if active -->
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+									</span>
+									<span class="avatar-btn like-btn" title="Мне нравится">
+										<!-- Remove "o" from class if active -->
+										<i class="fa fa-heart-o" aria-hidden="true"></i>
+										<span>998</span>
+									</span>
+								</div>
 							</div>
 							<div class="profile-avatar-meta">
 								<h1>Faro del porto</h1>
@@ -68,8 +81,15 @@
 								<span class="likes-value">389</span>
 							</div>
 							<div class="profile-menu-btns-container">
-								<span class="profile-menu-btn like" id="like-btn">Мне нравится<i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-								<!--<span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span>-->
+								<span class="profile-menu-btn" id="like-btn">
+									Мне нравится
+									<i class="fa fa-heart-o" aria-hidden="true"></i>
+								</span>
+								<span class="profile-menu-btn" id="add-to-fav-btn">
+									В избранное
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</span>
+								<!-- <span class="profile-menu-btn green">Сообщение<i class="fa fa-envelope" aria-hidden="true"></i></span> -->
 							</div>
 						</div>
 					</div>
@@ -589,6 +609,19 @@
 			<p>В ближайшие пару минут наш менеджер перезвонит вам и уточнит все детали вашего заказа.</p>
 		</div>
 	</div>
+	<div class="modal-default" id="fav-register-modal">
+		<div class="modal-default-pane">
+			<h6 class="modal-default-pane-header">Регистрация</h6>
+			<div class="modal-default-pane-content">
+				<p>Добавлять заведения в избранное могут только зарегистрированные пользователи.</p>
+				<p class="text-center">
+					<b>Зарегистрироваться через:</b>
+				</p>
+				<span class="facebook-reg-button">Facebook</span>
+			</div>
+			<div class="close-default-modal-btn"></div>
+		</div>
+	</div>
 	<!-- JS -->
 	<script src="js/libs/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
@@ -896,6 +929,16 @@
 			// Close modal message
 			$('.close-modal-message').on('click', function() {
 				$(this).closest('.modal-message').removeClass('visible');
+			});
+
+			// Default modal example
+			$('.add-to-fav-btn, #add-to-fav-btn').on('click', function() {
+				$('#fav-register-modal').addClass('visible');
+			});
+
+			// Close default modal
+			$('.close-default-modal-btn').on('click', function() {
+				$(this).closest('.modal-default').removeClass('visible');
 			});
 		});
 	</script>
