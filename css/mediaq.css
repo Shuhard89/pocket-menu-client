@@ -1004,6 +1004,16 @@
 	.profile-col-small.offers-block {
 		padding: 25px 15px 15px 15px;
 	}
+
+	.user-photo-input-wrapper,
+	.modal-order-form-input-wrapper.user-profile-custom {
+		width: 100%;
+	}
+
+	.user-photo-input-wrapper label,
+	.user-photo {
+		margin: 0 auto;
+	}
 }
 
 @media all and ( max-width: 560px ){
