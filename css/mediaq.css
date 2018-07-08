@@ -95,6 +95,14 @@
 	.profile-menu-stats {
 		display: none;
 	}
+
+	.menu-page-content-wrapper .profile-col-small-container {
+		margin: 0 0 20px 0;
+	}
+
+	.menu-page-content-wrapper {
+		display: block;
+	}
 }
 
 @media all and ( max-width: 767px ){
@@ -991,6 +999,10 @@
 	.like-btn {
 		bottom: 25px;
 		left: -3px;
+	}
+
+	.profile-col-small.offers-block {
+		padding: 25px 15px 15px 15px;
 	}
 }
 
