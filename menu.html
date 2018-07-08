@@ -639,13 +639,20 @@
 			});
 
 			// Like animate
-			$('#like-btn').on('click', function(event) {
+			$('#like-btn, .like-btn').on('click', function(event) {
 				event.preventDefault();
 				
-				var likesValuePlaceholder = $('.likes-value');
+				var likesValuePlaceholder = $('.likes-value'),
+					likesValue = likesValuePlaceholder.text();
 
                 likesValuePlaceholder.removeClass('animate');
-				likesValuePlaceholder.html(+likesValuePlaceholder.html() + 1);
+                if ( $(this).find('i').hasClass('fa-heart-o') ) {
+					likesValuePlaceholder.html(+likesValue + 1);
+					$('.like-btn > span').html(+likesValue + 1)
+                } else {
+					likesValuePlaceholder.html(+likesValue - 1);
+					$('.like-btn > span').html(+likesValue - 1);
+                }
 				likesValuePlaceholder.addClass('animate');
 			});
 
@@ -939,6 +946,15 @@
 			// Close default modal
 			$('.close-default-modal-btn').on('click', function() {
 				$(this).closest('.modal-default').removeClass('visible');
+			});
+
+			// Like btn example
+			$('#like-btn, .like-btn').on('click', function() {
+				if ( $(this).find('i').hasClass('fa-heart-o') ) {
+					$('#like-btn, .like-btn').find('i').removeClass('fa-heart-o').addClass('fa-heart');
+				} else {
+					$('#like-btn, .like-btn').find('i').removeClass('fa-heart').addClass('fa-heart-o');
+				}
 			});
 		});
 	</script>

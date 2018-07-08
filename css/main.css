@@ -417,11 +417,10 @@ button{
 	font-size: 12px;
 	line-height: 26px;
 	border-radius: 13px;
-	background-color: #fff;
 	cursor: pointer;
 	box-shadow: 0 0 30px rgba(0, 36, 90, .1);
-	color: #e98d00;
-	background-color: #fff;
+	color: #fff;
+	background-color: #e98d00;
 	padding: 0 6px;
 }
 
